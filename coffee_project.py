@@ -109,7 +109,7 @@ def resource_requirement(u_order):
     elif u_order == "espresso" and resources["water"] >= 50 and resources["coffee"] >= 18:
         coins(u_order)
     else:
-        print("Unavailable resources. Come back later.")
-
+        print(f"Unavailable resources. Come back later. water = {resources['water']}, coffee = {resources['coffee']}, milk = {resources['milk']}")
+        exit()
 while True:
     order()
