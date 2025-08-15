@@ -104,10 +104,18 @@ def order():
 def resource_requirement(u_order):
     if u_order == "cappuccino" and resources["water"] >= 250 and resources["coffee"] >= 24 and resources["milk"] >= 100:
         coins(u_order)
+        resources["water"] -=250
+        resources["coffee"] -=24
+        resources["milk"] -=100
     elif u_order == "latte" and resources["water"] >= 200 and resources["coffee"] >= 24 and resources["milk"] >= 150:
         coins(u_order)
+        resources["water"] -= 200
+        resources["coffee"] -= 24
+        resources["milk"] -= 150
     elif u_order == "espresso" and resources["water"] >= 50 and resources["coffee"] >= 18:
         coins(u_order)
+        resources["water"] -= 50
+        resources["coffee"] -= 10
     else:
         print(f"Unavailable resources. Come back later. water = {resources['water']}, coffee = {resources['coffee']}, milk = {resources['milk']}")
         exit()
